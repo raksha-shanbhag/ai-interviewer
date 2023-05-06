@@ -1,13 +1,281 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    padding: 0;
 }
+
+.app {
+    background-color: #343541;
+    display: flex;
+}
+
+.side-bar {
+    background-color: #202123;
+    height: 100vh;
+    width: 244px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+.title {
+    font-size: 36px;
+    background-color: #202123;
+    width: calc(100% - 50px);
+    padding: 25px;
+}
+
+.input-title {
+    font-size: 24px;
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+nav {
+    border-top: solid 0.5px rgba(255,255,255,0.5);
+    padding: 10px;
+    margin: 10px;
+}
+
+.info {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    padding: 10px;
+}
+
+.bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-container {
+    text-align: left;
+    padding: 35px 50px;
+}
+
+.chat-history{
+    padding: 25px 50px 0;
+}
+
+.chat-accordion {
+    color: red !important;
+    background-color: black !important;
+    font-size: 20px;
+}
+
+.chat {
+    background-color: #201c1c !important;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 0;
+}
+
+.ac-button {
+    width: 100px;
+    height: 30px;
+    background-color: gray;
+    color: white;
+    margin-right: 8px;
+    border: solid black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ac-button:hover {
+    background-color: red;
+}
+
+.input-area {
+    width: 96%;
+    border: none;
+    font-size: 14px;
+    color: black;
+    background-color: rgb(236, 236, 236);
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin: 8px 0;
+}
+
+#submit {
+    bottom: 15px;
+    right: 0;
+    cursor: pointer;
+}
+
+.response-display {
+    background-color: red;
+    box-shadow: rgba(0,0,0,0.05) 0 -12px 30px,
+            rgba(0,0,0,0.05) 0 4px 6px,
+            rgba(0,0,0,0.05) 0 12px 3px,
+            rgba(0,0,0,0.05) 0 -3px 5px;
+    background-color:  #202123;
+    border-radius: 16px;
+    padding: 16px;
+    white-space: pre-wrap;
+    margin: 8px 0;
+    min-height: 16px;
+}
+
+.response-title{
+    color: yellow;
+    margin-bottom: 16px;
+}
+
+.whole-chat {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.message {
+    text-align: left;
+    margin: 16px;
+}
+
+.message p {
+    margin: 0;
+    color: inherit;
+}
+
+.message-title {
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+.message-content {
+    border-radius: 16px;
+    padding: 8px;
+    white-space: pre-wrap;
+}
+
+.user-question {
+    color: turquoise !important;
+}
+
+.system-response {
+    color: yellow !important;
+}
+
+/* 
+* {
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    background-color: #343541;
+    display: flex;
+}
+
+button {
+    border: solid 0.5px rgba(255,255,255,0.5);
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+nav {
+    border-top: solid 0.5px rgba(255,255,255,0.5);
+    padding: 10px;
+    margin: 10px;
+}
+
+.info {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    padding: 10px;
+}
+
+.bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 75vh;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    background-color: rgba(255,255,255,0.05);
+    padding: 12px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.05) 0 54px 55px,
+            rgba(0,0,0,0.05) 0 -12px 30px,
+            rgba(0,0,0,0.05) 0 4px 6px,
+            rgba(0,0,0,0.05) 0 12px 3px,
+            rgba(0,0,0,0.05) 0 -3px 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#submit {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    cursor: pointer;
+}
+
+
+.side-bar {
+    background-color: #202123;
+    height: 100vh;
+    width: 244px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+.history {
+    padding: 10px;
+    margin: 10px;
+    height: 100%;
+}
+
+.history li {
+    list-style-type: none;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+*/
