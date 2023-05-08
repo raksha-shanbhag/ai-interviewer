@@ -74,22 +74,11 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* <section className='side-bar'>
-        <button> + New Chat</button>
-        <ul className='history'> History</ul>
-        <nav>
-          <p> Made by Raksha</p>
-        </nav>
-      </section> */}
-      <section className='content'>
-        <div className="title"> Interview Assistant</div>
-        <div className="bottom-section">
-          <ChatHistory children={chatHistory} defaultExpanded={expand}/>
+      <div className="title"> Interview Assistant</div>
+      <div className="bottom-section">
+        <section className='content'>
           <div className="input-container">
             <div className="input-title">Interview questions regarding your job description</div>
-            <ul className="history">
-
-            </ul>
             <textarea className="input-area" placeholder="Place your job description here" rows={5} value={value} onChange={(e)=> setValue(e.target.value)}/>
             <div className="response-display">
               <b className="response-title">{'Interviewer:\n'}</b>
@@ -100,11 +89,16 @@ const App = () => {
               <button className="another ac-button" onClick={clearResponse}>Clear</button>
             </div>
           </div>
-        </div>
-        <p className="info">
-          Made by Raksha Shanbhag
-        </p>
-      </section>
+        </section>
+        <section className='side-bar'>
+          <div className="chat-title">Question Bank</div>
+          {chatHistory}
+          {/* <ChatHistory children={chatHistory} defaultExpanded={expand}/> */}
+        </section>
+      </div>
+      <p className="info">
+        Made by Raksha Shanbhag
+      </p>
     </div>
   );
 }

@@ -11,35 +11,64 @@ body {
 .app {
     background-color: #343541;
     display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.title {
+    font-size: 36px;
+    background-color: black;
+    padding: 25px;
+    text-align: center;
+}
+
+.info {
+    color: rgba(255,255,255,0.5);
+    background-color: black;
+    font-size: 11px;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.bottom-section {
+    display: flex;
+    height: calc(100vh - 126px)
 }
 
 .side-bar {
     background-color: #202123;
-    height: 100vh;
-    width: 244px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    padding: 35px 50px;
 } 
 
-.title {
-    font-size: 36px;
-    background-color: #202123;
-    width: calc(100% - 50px);
-    padding: 25px;
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    width: 100%;
+    padding: 35px 50px;
 }
 
+.input-container {
+    text-align: left;
+}
 .input-title {
     font-size: 24px;
 }
 
-.content {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.input-area {
+    width: 95%;
+    border: none;
+    font-size: 14px;
+    color: black;
+    background-color: rgb(236, 236, 236);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 8px 0;
 }
 
 nav {
@@ -48,36 +77,17 @@ nav {
     margin: 10px;
 }
 
-.info {
-    color: rgba(255,255,255,0.5);
-    font-size: 11px;
-    padding: 10px;
+.chat-title {
+    font-size: 24px;
+    margin-bottom: 16px;
 }
 
-.bottom-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.input-container {
-    text-align: left;
-    padding: 35px 50px;
-}
-
-.chat-history{
-    padding: 25px 50px 0;
-}
-
-.chat-accordion {
-    color: red !important;
-    background-color: black !important;
-    font-size: 20px;
-}
-
-.chat {
-    background-color: #201c1c !important;
+.whole-chat {
+    overflow-y: scroll;
+    padding: 16px;
+    border: 1px solid black;
+    background-color: #343541;
+    scrollbar-color: red;
 }
 
 .action-buttons {
@@ -99,17 +109,6 @@ nav {
 
 .ac-button:hover {
     background-color: red;
-}
-
-.input-area {
-    width: 96%;
-    border: none;
-    font-size: 14px;
-    color: black;
-    background-color: rgb(236, 236, 236);
-    padding: 12px 15px;
-    border-radius: 5px;
-    margin: 8px 0;
 }
 
 #submit {
@@ -135,11 +134,6 @@ nav {
 .response-title{
     color: yellow;
     margin-bottom: 16px;
-}
-
-.whole-chat {
-    max-height: 200px;
-    overflow-y: scroll;
 }
 
 .message {
