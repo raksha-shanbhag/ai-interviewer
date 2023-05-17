@@ -1,18 +1,21 @@
-const PORT = 8000;
+require('dotenv').config();
+
+const PORT = process.env.PORT;
 const express = require('express');
 const cors = require('cors');
 const fetch = require("node-fetch");
-
+ 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-const API_KEY = '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';
+const API_KEY = process.env.OPENAI_API_KEY;
 const API_URL = 'https://api.openai.com/v1/chat/completions';
 
 
 // api routes
-app.post('/completions', async(req, res) => {
+app.post('/resumeWork', async(req, res) => {
+    const question = "Generate a list of common job interview questions and suggested answers using the STAR (Situation, Task, Action, Result) format. Tailor the responses based on my work experience - " + req.body.message;
     const options = {
         method: "POST",
         headers: {
@@ -21,8 +24,8 @@ app.post('/completions', async(req, res) => {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{role: 'user', content: req.body.message}],
-            max_tokens: 100,
+            messages: [{role: 'user', content: question}],
+            max_tokens: 1000,
         })
     };
 

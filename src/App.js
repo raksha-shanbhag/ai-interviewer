@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from "react";
 import ChatHistory from "./components/chatHistory";
 
-const API_URL = 'http://localhost:8000/completions';
+const API_URL = 'http://localhost:8000/resumeWork';
 
 const App = () => {
   const [value, setValue] = useState(null);
@@ -74,7 +74,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="title"> Interview Assistant</div>
+      <div className="title">Interview Assistant</div>
       <div className="bottom-section">
         <section className='content'>
           <div className="input-container">
